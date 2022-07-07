@@ -1,0 +1,130 @@
+{
+  "uuid": "9f3933b1-0eac-4cd4-97ca-cd585b299fed",
+  "lastMigration": 19,
+  "name": "Items",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "ae7b5fc2-a9c3-4447-9162-0e45262871cc",
+      "documentation": "all products",
+      "method": "get",
+      "endpoint": "products",
+      "responses": [
+        {
+          "uuid": "26d56eca-3434-43df-b957-60fecc0dadc5",
+          "body": "{\n\t\"arrayOfProducts\": [\n\t\t{\n\t\t  \"discount\": true,\n\t\t\t\"imgUrl\": \"https://guesseu.scene7.com/is/image/GuessEU/M63H24W7JF0-L302-ALTGHOST?wid=1500&fmt=jpeg&qlt=80&op_sharpen=0&op_usm=1.0,1.0,5,0&iccEmbed=0\",\n\t\t\t\"name\": \"CHECK PRINT SHIRT\",\n\t\t\t\"price\": 110\n\t\t},\n\t\t{\n\t\t  \"discount\": false,\n\t\t\t\"imgUrl\": \"https://guesseu.scene7.com/is/image/GuessEU/FLGLO4FAL12-BEIBR?wid=700&amp;fmt=jpeg&amp;qlt=80&amp;op_sharpen=0&amp;op_usm=1.0,1.0,5,0&amp;iccEmbed=0\",\n\t\t\t\"name\": \"GLORIA HIGH LOGO SNEAKER\",\n\t\t\t\"price\": 91\n\t\t},\n\t\t{\n\t\t  \"discount\":false,\n\t\t\t\"imgUrl\": \"https://guesseu.scene7.com/is/image/GuessEU/HWVG6216060-TAN?wid=700&amp;fmt=jpeg&amp;qlt=80&amp;op_sharpen=0&amp;op_usm=1.0,1.0,5,0&amp;iccEmbed=0\",\n\t\t\t\"name\": \"CATE RIGID BAG\",\n\t\t\t\"price\": 94.5\n\t\t},\n\t\t{\n\t\t  \"discount\": false,\n\t\t\t\"imgUrl\": \"http://guesseu.scene7.com/is/image/GuessEU/WC0001FMSWC-G5?wid=520&fmt=jpeg&qlt=80&op_sharpen=0&op_usm=1.0,1.0,5,0&iccEmbed=0\",\n\t\t\t\"name\": \"GUESS CONNECT WATCH\",\n\t\t\t\"price\": 400\n\t\t}\n\t]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "88c0609d-1d90-45c7-8b9a-d5422e1ec1fc",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "discount",
+      "responses": [
+        {
+          "uuid": "fa3c6e83-bbd5-496e-92cc-97f9b1f63f06",
+          "body": "{\n  \"message\": \"Discount is exists for this product!\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "6edf8555-55b2-4b58-acb2-7c0a1c280c01",
+          "body": "{\n \"yesDiscount\":\"good news you got 10% discount on this item\"\n \n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "checkitem",
+              "value": "checkthis",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}

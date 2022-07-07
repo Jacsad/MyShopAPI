@@ -1,0 +1,26 @@
+body{
+    background-color: black;
+}
+img{
+    width: 100px;
+    border-radius: 50%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    
+}
+
+.product {
+    border: 2px solid rgb(255, 0, 0);
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 2rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: red;
+    flex-basis: min-content;
+}
